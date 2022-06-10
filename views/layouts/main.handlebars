@@ -12,21 +12,23 @@
     <div class="flex-column justify-space-around">
       <header class="display-flex justify-space-between align-center p-2">
         <h1>
-          <span role="img" aria-label="money">💸</span>
           <a href="/">TECH BLOG</a>
         </h1>
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <a href="/profile">profile</a>
-            |
-            <button class="no-button" id="logout">logout</button>
+            <a href="/">HOME</a>
+
+            <a href="/profile">Dashboard</a>
+            <button class="no-button" id="logout">LOGOUT</button>
           {{else}}
-            <a href="/login">login</a>
+            <a href="/">HOME</a>
+
+            <a href="/login">LOGIN</a>
           {{/if}}
         </nav>
       </header>
-      <main class="container container-fluid mt-5">
+      <main class="container container-fluid mt-5 post-section">
         <!-- Render the sub layout -->
         {{{body}}}
       </main>

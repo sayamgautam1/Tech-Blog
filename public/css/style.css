@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1024px;
+  margin: 50px auto;
+}
+
+/* a tag */
+
+a {
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* post section of the page */
+
+.post-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  max-width: auto;
+}
+
+.post {
+  flex: 1;
+  overflow-wrap: break-word;
+  border: 1px solid rgb(32, 30, 30);
+  padding: 10px;
+  margin: 10px;
+}
