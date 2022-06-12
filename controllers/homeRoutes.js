@@ -95,11 +95,16 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
 
   res.render("login");
 });
 
+// add logout route
+
+router.get("/logout", (req, res) => {
+  res.redirect("/");
+});
 module.exports = router;
