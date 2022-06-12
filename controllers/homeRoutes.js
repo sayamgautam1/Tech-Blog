@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const { where } = require("sequelize/types");
 const { User, Post, Comment } = require("../models");
 
 const withAuth = require("../utils/auth");
@@ -33,7 +32,7 @@ router.get("/", async (req, res) => {
 });
 // get each post of the blog
 
-router.get("/post/:id", async (req, res) => {
+router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -65,6 +64,27 @@ router.get("/post/:id", async (req, res) => {
       post,
       comments,
       logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// get dashboard when user login
+
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    // find the logged in user based on the session id
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Post }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render("dashboard", {
+      user,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
