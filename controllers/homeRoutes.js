@@ -100,6 +100,21 @@ router.get("/write-post", (req, res) => {
     });
   }
 });
+
+// edit existing post
+
+router.get("/edit-post/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+
+    const post = postData.get({ plain: true });
+    console.log(post);
+
+    res.render("editpost", { post, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 // add login route
 
 router.get("/login", (req, res) => {
