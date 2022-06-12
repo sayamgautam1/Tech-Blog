@@ -91,6 +91,15 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+// create new post
+
+router.get("/write-post", (req, res) => {
+  if (req.session.logged_in) {
+    res.render("writepost", {
+      logged_in: true,
+    });
+  }
+});
 // add login route
 
 router.get("/login", (req, res) => {
