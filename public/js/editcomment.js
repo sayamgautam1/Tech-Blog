@@ -35,6 +35,6 @@ editCommentButtons.forEach((button) => {
   button.addEventListener("click", goToEdit);
 });
 
-document
-  .querySelector(".save-btn")
-  .addEventListener("click", editCommentButtonHandler);
+// document
+//   .querySelector(".save-btn")
+//   .addEventListener("click", editCommentButtonHandler);

@@ -40,6 +40,6 @@ editButtons.forEach((button) => {
   button.addEventListener("click", goToEditPage);
 });
 
-document
-  .querySelector(".save-button")
-  .addEventListener("click", editButtonHandler);
+// document
+//   .querySelector(".save-button")
+//   .addEventListener("click", editButtonHandler);

@@ -20,4 +20,4 @@ const newComment = async (event) => {
   }
 };
 
-document.querySelector(".comment-btn").addEventListener("click", newComment);
+// document.querySelector(".comment-btn").addEventListener("click", newComment);
