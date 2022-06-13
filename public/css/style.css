@@ -86,7 +86,13 @@ header {
   overflow-wrap: break-word;
   border: 1px solid rgb(32, 30, 30);
   padding: 10px;
-  margin-bottom: 10px;
+}
+
+/* comment buttons */
+
+.comment-btn {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* user dashboard */
