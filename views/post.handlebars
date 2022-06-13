@@ -10,9 +10,18 @@
   <h2>{{name}}</h2>
 
   {{#each comments as |comment|}}
+  {{post.title}}
 
    {{>comment-card}}
+   {{#if ../logged_in}}
+      {{#when comment.user_id 'eq' ../user_id }}
+      {{>comment-btn}}
+      {{/when}}
+    {{/if}}
+ 
+
   {{/each}}
+    
 </div>
 
 <!-- form to get new comments-->

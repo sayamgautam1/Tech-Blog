@@ -64,6 +64,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
       post,
       comments,
       logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -117,6 +118,11 @@ router.get("/edit-post/:id", async (req, res) => {
 });
 
 // edit existing comments
+
+router.get("/change-comment/:id", async (req, res) => {
+  try {
+  } catch {}
+});
 
 // add login route
 
