@@ -115,6 +115,9 @@ router.get("/edit-post/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// edit existing comments
+
 // add login route
 
 router.get("/login", (req, res) => {
