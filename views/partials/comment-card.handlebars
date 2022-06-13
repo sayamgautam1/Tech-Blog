@@ -1,5 +1,8 @@
 <div class="comment">
   <p>{{description}}</p>
-  <p>By: {{user.name}}</p>
-  <p>Created: {{format_date date_created}}</p>
+  <div class="comment-user">
+    <p>{{user.name}} on:{{format_date date_created}}</p>
+
+  </div>
+
 </div>

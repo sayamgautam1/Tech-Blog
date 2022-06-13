@@ -6,17 +6,19 @@
     </div>
   </div>
   <!--get list of all past post-->
+  <h3>Your Post:</h3>
 
   {{#if user.posts.length}}
     <div class="col-md-6 post-list">
-      <h3>Current post:</h3>
 
       {{#each user.posts as |post|}}
-        <div class="row mb-2">
+        <div class="row mb-2 single-user-post">
           <div class="col-md-8">
-            <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-            <p>{{post.description}}</p>
+            <a href="/post/{{post.id}}"><h4>{{post.title}}</h4>
+              <p>{{post.description}}</p>
+            </a>
           </div>
+          <hr />
           <div class="col-md-4">
             <button
               class="btn btn-sm btn-danger edit-btn"

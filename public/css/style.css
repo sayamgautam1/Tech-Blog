@@ -24,11 +24,12 @@ header {
 /* post section of the page */
 
 .post-section {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   margin-top: 2em;
   max-width: auto;
+  margin: 10px;
 }
 
 .post {
@@ -72,5 +73,35 @@ header {
 /* dashboard section of the page */
 .dashboard-section {
   width: 100%;
+  padding: 10px;
+}
+
+/* single post page */
+
+.single-post {
+  margin: 50px;
+}
+
+.comment {
+  overflow-wrap: break-word;
+  border: 1px solid rgb(32, 30, 30);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* user dashboard */
+/* .post-list {
+  padding: 10px;
+  margin: 10px;
+} */
+.single-user-post {
+  border: 1px solid rgb(32, 30, 30);
+  overflow-wrap: break-word;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* edit-post */
+.write-post {
   padding: 10px;
 }
