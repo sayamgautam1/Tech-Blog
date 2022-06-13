@@ -15,7 +15,11 @@
    {{>comment-card}}
    {{#if ../logged_in}}
       {{#when comment.user_id 'eq' ../user_id }}
-      {{>comment-btn}}
+      {{!-- {{>comment-btn}} --}}
+      <div class="form-group comment-btn">
+        <button type="submit" class="btn-primary comment-edit" data-id="{{comment.id}}">Edit</button>
+        <button type="submit" class="btn-primary comment-delete" data-id="{{comment.id}}">Delete</button>
+      </div>
       {{/when}}
     {{/if}}
  

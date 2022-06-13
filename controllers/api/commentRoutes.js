@@ -21,7 +21,7 @@ router.post("/", withAuth, async (req, res) => {
 
 // edit existing comment
 
-router.put(":/id", withAuth, async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     const commentData = await Comment.update(req.body, {
       where: {

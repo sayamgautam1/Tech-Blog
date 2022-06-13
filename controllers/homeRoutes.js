@@ -119,9 +119,17 @@ router.get("/edit-post/:id", async (req, res) => {
 
 // edit existing comments
 
-router.get("/change-comment/:id", async (req, res) => {
+router.get("/edit-comment/:id", async (req, res) => {
   try {
-  } catch {}
+    const commentData = await Comment.findByPk(req.params.id);
+
+    const comment = commentData.get({ plain: true });
+    console.log(comment);
+
+    res.render("editcomment", { comment, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // add login route
