@@ -19,7 +19,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   rolling: true,
-  cookie: {},
+  // session expires after one minute
+  cookie: { maxAge: 60000 },
   store: new SequelizeStore({
     db: sequelize,
   }),
